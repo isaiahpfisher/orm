@@ -9,7 +9,7 @@ import authors from '@/routes/authors';
 import categories from '@/routes/categories';
 import posts from '@/routes/posts';
 import { Form, Head, Link } from '@inertiajs/react';
-import { EyeIcon, Loader2, PencilIcon, SaveIcon, Trash2Icon } from 'lucide-react';
+import { ChevronLeftIcon, EyeIcon, Loader2, PencilIcon, SaveIcon, Trash2Icon } from 'lucide-react';
 
 export default function AuthorsEdit({ author }: { author: any }) {
     return (
@@ -19,6 +19,14 @@ export default function AuthorsEdit({ author }: { author: any }) {
                 <Heading
                     title={author.name}
                     description="Labore adipisicing exercitation pariatur ad excepteur eu laboris ex pariatur reprehenderit deserunt laborum ut aliquip amet."
+                    actions={
+                        <Button asChild variant={'ghost'}>
+                            <Link href={authors.index()}>
+                                <ChevronLeftIcon />
+                                Back
+                            </Link>
+                        </Button>
+                    }
                 />
 
                 <div className="grid grid-cols-3 gap-12">
@@ -68,7 +76,7 @@ export default function AuthorsEdit({ author }: { author: any }) {
                             </div>
                         )}
                     </div>
-                    <Card>
+                    <Card className="h-fit">
                         <CardHeader>
                             <CardTitle>Edit Author</CardTitle>
                         </CardHeader>

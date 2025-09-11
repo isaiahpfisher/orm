@@ -6,8 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import posts from '@/routes/posts';
-import { Form, Head } from '@inertiajs/react';
-import { SaveIcon } from 'lucide-react';
+import { Form, Head, Link } from '@inertiajs/react';
+import { ChevronLeftIcon, SaveIcon } from 'lucide-react';
 
 export default function PostsEdit({ post, authors, categories }: { post: any; authors: any[]; categories: any[] }) {
     return (
@@ -17,6 +17,14 @@ export default function PostsEdit({ post, authors, categories }: { post: any; au
                 <Heading
                     title={post.title}
                     description="Labore adipisicing exercitation pariatur ad excepteur eu laboris ex pariatur reprehenderit deserunt laborum ut aliquip amet."
+                    actions={
+                        <Button asChild variant={'ghost'}>
+                            <Link href={posts.index()}>
+                                <ChevronLeftIcon />
+                                Back
+                            </Link>
+                        </Button>
+                    }
                 />
 
                 <Form action={posts.store()} method="post">
