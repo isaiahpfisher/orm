@@ -11,7 +11,7 @@ import categories from '@/routes/categories';
 import posts from '@/routes/posts';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Menu, NewspaperIcon, TagsIcon, UsersRoundIcon } from 'lucide-react';
+import { GithubIcon, Menu, NewspaperIcon, TagsIcon, UsersRoundIcon } from 'lucide-react';
 import AppLogo from './app-logo';
 import AppLogoIcon from './app-logo-icon';
 import AppearanceToggleDropdown from './appearance-dropdown';
@@ -111,9 +111,12 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                         </NavigationMenu>
                     </div>
                     <div className="ml-auto flex items-center space-x-2">
-                        <div className="relative flex items-center space-x-1">
-                            <AppearanceToggleDropdown />
-                        </div>
+                        <AppearanceToggleDropdown />
+                        <Button asChild size={'icon'} variant={'ghost'}>
+                            <a href={'https://github.com/isaiahpfisher/orm'} target="_blank">
+                                <GithubIcon />
+                            </a>
+                        </Button>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" className="size-10 rounded-full p-1">

@@ -6,7 +6,7 @@ import { login, register } from '@/routes';
 import postRoutes from '@/routes/posts';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
-import { EyeIcon, LockIcon } from 'lucide-react';
+import { EyeIcon, GithubIcon, LockIcon } from 'lucide-react';
 
 export default function Home({ posts }: { posts: any[] }) {
     const { auth } = usePage<SharedData>().props;
@@ -42,6 +42,11 @@ export default function Home({ posts }: { posts: any[] }) {
                                     </>
                                 )}
                                 <AppearanceToggleDropdown />
+                                <Button asChild size={'icon'} variant={'ghost'}>
+                                    <a href="https://github.com/isaiahpfisher/orm" target="_blank">
+                                        <GithubIcon />
+                                    </a>
+                                </Button>
                             </nav>
                         }
                     />
