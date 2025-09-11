@@ -18,7 +18,7 @@ export default function Home({ posts }: { posts: any[] }) {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
             <div className="mx-auto flex max-w-5xl flex-col p-6">
-                <div className="py-12">
+                <div className="py-4">
                     <Heading
                         title="ORM Blog"
                         description="Labore adipisicing exercitation pariatur ad excepteur eu laboris ex pariatur."
