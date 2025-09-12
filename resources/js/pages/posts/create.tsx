@@ -23,7 +23,7 @@ export default function PostsCreate({ categories, authors }: { categories: any[]
                     {({ errors }) => (
                         <>
                             <div className="grid gap-12 md:grid-cols-3">
-                                <div className="col-span-2 flex flex-col gap-6 md:col-span-1">
+                                <div className="col-span-2 flex flex-col gap-6 md:order-last md:col-span-1">
                                     <div className="grid gap-3">
                                         <Label>Author</Label>
                                         <Select name="author">
