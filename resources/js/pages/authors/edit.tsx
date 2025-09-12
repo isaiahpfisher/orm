@@ -29,7 +29,7 @@ export default function AuthorsEdit({ author }: { author: any }) {
                     }
                 />
 
-                <div className="grid grid-cols-3 gap-12">
+                <div className="grid gap-12 md:grid-cols-3">
                     <div className="col-span-2 space-y-6">
                         {author.posts.length > 0 ? (
                             author.posts.map((post: any) => (
@@ -76,7 +76,7 @@ export default function AuthorsEdit({ author }: { author: any }) {
                             </div>
                         )}
                     </div>
-                    <Card className="h-fit">
+                    <Card className="order-first col-span-2 h-fit md:order-last md:col-span-1">
                         <CardHeader>
                             <CardTitle>Edit Author</CardTitle>
                         </CardHeader>

@@ -23,11 +23,11 @@ export default function CategoriesIndex({ categories }: { categories: any[] }) {
                         </Button>
                     }
                 />
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                     {categories.map((category) => (
                         <Card key={category.id}>
                             <CardHeader>
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                                     <CardTitle>{category.name}</CardTitle>
                                     <div className="flex gap-2">
                                         <Button asChild size={'sm'} variant={'outline'}>

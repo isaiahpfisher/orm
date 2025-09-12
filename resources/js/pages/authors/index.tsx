@@ -23,11 +23,11 @@ export default function AuthorsIndex({ authors }: { authors: any[] }) {
                         </Button>
                     }
                 />
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                     {authors.map((author) => (
                         <Card key={author.id}>
                             <CardHeader>
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                                     <div>
                                         <CardTitle>{author.name}</CardTitle>
                                         <CardDescription>{author.email}</CardDescription>

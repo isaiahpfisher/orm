@@ -30,24 +30,12 @@ export default function PostsEdit({ post, authors, categories }: { post: any; au
                 <Form action={posts.store()} method="post">
                     {({ errors }) => (
                         <>
-                            <div className="grid grid-cols-3 gap-12">
-                                <div className="col-span-2 flex flex-col gap-6">
-                                    <div className="grid gap-3">
-                                        <Label>Title</Label>
-                                        <Input name="title" defaultValue={post.title} />
-                                        {errors.title && <p className="text-xs text-red-500">{errors.title}</p>}
-                                    </div>
-                                    <div className="grid gap-3">
-                                        <Label>Content</Label>
-                                        <Textarea name="content" rows={20} defaultValue={post.content} />
-                                        {errors.content && <p className="text-xs text-red-500">{errors.content}</p>}
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-6">
+                            <div className="grid gap-12 md:grid-cols-3">
+                                <div className="col-span-2 flex flex-col gap-6 md:col-span-1">
                                     <div className="grid gap-3">
                                         <Label>Author</Label>
                                         <Select name="author" defaultValue={post.author.id.toString()}>
-                                            <SelectTrigger>
+                                            <SelectTrigger className="w-full">
                                                 <SelectValue placeholder="Select an author" />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -75,6 +63,18 @@ export default function PostsEdit({ post, authors, categories }: { post: any; au
                                             </SelectContent>
                                         </Select>
                                         {errors.category && <p className="text-xs text-red-500">{errors.category}</p>}
+                                    </div>
+                                </div>
+                                <div className="col-span-2 flex flex-col gap-6">
+                                    <div className="grid gap-3">
+                                        <Label>Title</Label>
+                                        <Input name="title" defaultValue={post.title} />
+                                        {errors.title && <p className="text-xs text-red-500">{errors.title}</p>}
+                                    </div>
+                                    <div className="grid gap-3">
+                                        <Label>Content</Label>
+                                        <Textarea name="content" rows={20} defaultValue={post.content} />
+                                        {errors.content && <p className="text-xs text-red-500">{errors.content}</p>}
                                     </div>
                                 </div>
                             </div>

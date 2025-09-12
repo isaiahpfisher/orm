@@ -5,8 +5,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import categories from '@/routes/categories';
-import { Form, Head } from '@inertiajs/react';
-import { SaveIcon } from 'lucide-react';
+import { Form, Head, Link } from '@inertiajs/react';
+import { ChevronLeftIcon, SaveIcon } from 'lucide-react';
 
 export default function CategoriesCreate() {
     return (
@@ -16,12 +16,20 @@ export default function CategoriesCreate() {
                 <Heading
                     title="Add Category"
                     description="Labore adipisicing exercitation pariatur ad excepteur eu laboris ex pariatur reprehenderit deserunt laborum ut aliquip amet."
+                    actions={
+                        <Button asChild variant={'ghost'}>
+                            <Link href={categories.index()}>
+                                <ChevronLeftIcon />
+                                Back
+                            </Link>
+                        </Button>
+                    }
                 />
 
                 <Form action={categories.store()} method="post">
                     {({ errors }) => (
                         <>
-                            <div className="grid grid-cols-3">
+                            <div className="grid md:grid-cols-3">
                                 <div className="col-span-2 flex flex-col gap-6">
                                     <div className="grid gap-3">
                                         <Label>Name</Label>

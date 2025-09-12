@@ -26,11 +26,11 @@ export default function PostsIndex({ posts }: { posts: any[] }) {
                     }
                 />
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                     {posts.map((post) => (
                         <Card key={post.id}>
                             <CardHeader>
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
                                     <div>
                                         <CardTitle>{post.title}</CardTitle>
                                         <CardDescription>
