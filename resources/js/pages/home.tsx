@@ -2,7 +2,7 @@ import AppearanceToggleDropdown from '@/components/appearance-dropdown';
 import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { login, register } from '@/routes';
+import { login } from '@/routes';
 import postRoutes from '@/routes/posts';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
@@ -34,10 +34,10 @@ export default function Home({ posts }: { posts: any[] }) {
                                 ) : (
                                     <>
                                         <Button asChild>
-                                            <Link href={login()}>Log in</Link>
-                                        </Button>
-                                        <Button asChild variant={'outline'}>
-                                            <Link href={register()}>Register</Link>
+                                            <Link href={login()}>
+                                                <LockIcon />
+                                                Admin
+                                            </Link>
                                         </Button>
                                     </>
                                 )}
